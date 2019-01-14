@@ -1,0 +1,50 @@
+
+
+<div class="container m-2">
+    <h2>Expense Details</h2><br>
+<div class="filter-section">
+<form id="view-expenses">
+    <p>Filter by:</p>
+    <div style="display:inline-block">
+        <label for="date-range">Date Range</label> <br>
+        <select id="date-range" class="form-control">
+            <option value="lastthirty">Last 30 Days</option> 
+            <option value="customrange">Custom Range</option>
+        </select>
+    </div>
+    <div id="custom-range" style="display:none">
+        <div style="display:inline-block">
+            <label for="start-date">Start</label>
+            <input id="start-date" type="date" class="form-control"></select>
+        </div>
+        <div style="display:inline-block">
+            <label for="end-date">End</label>   
+            <input id="end-date" type="date" class="form-control"></select>
+        </div>
+    </div>
+    <br>    
+    <div style="display:inline-block">
+        <label for="category">Category (optional)</label> 
+          <select id="category" class="form-control">
+            <option value="">All</option> 
+            {{#each categories}}
+              <option value={{this.id}}>{{category_name}}</option>
+            {{/each}}
+          </select>
+      </div> 
+
+      <div style="display:inline-block">
+        <label for="description">Description (optional)</label> 
+        <input id="description" type="text" class="form-control">
+      </div> 
+      
+
+      
+      <input id="submit" type="submit" class="btn btn-success"> 
+    </form>
+      <div id="expenses-display"></div>
+    </div>
+  </div>
+
+
+<script src= "/js/viewexpenses.js"></script>
